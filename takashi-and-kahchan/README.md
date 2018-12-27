@@ -1,8 +1,13 @@
 # takashi-and-kahchan
 
+J( 'ー`)し
+
+`https://yakumomutsuki.github.io/takashi-and-kahchan/dist/`
+
+
 > A Vue.js project
 
-## Build Setup
+## Build Setup ( for me and us )
 
 ``` bash
 # install dependencies
