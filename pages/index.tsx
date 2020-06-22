@@ -1,12 +1,12 @@
-import * as React from "react";
+import * as React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
 class Home extends React.Component {
-  componentDidMount(): void {
-    const search = location.search.substring(1);
+  componentDidMount (): void {
+    const search = location.search.substring(1)
     if (search) {
-      const query = JSON.parse('{"' + decodeURI(search.replace(/&/g, "\",\"").replace(/=/g, "\":\"")) + '"}') as { originalPath: string }
+      const query = JSON.parse('{"' + decodeURI(search.replace(/&/g, '","').replace(/=/g, '":"')) + '"}') as { originalPath: string }
       if (query?.originalPath) {
         console.log(query.originalPath)
         history.replaceState(null, null, query.originalPath)
@@ -14,74 +14,74 @@ class Home extends React.Component {
     }
   }
 
-  render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
+  render (): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
     return (
-        <div className="container">
-          <Head>
-            <title>Create Next App</title>
-            <link rel="icon" href="/favicon.ico" />
-          </Head>
+      <div className="container">
+        <Head>
+          <title>Create Next App</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-          <main>
-            <h1 className="title">
+        <main>
+          <h1 className="title">
               Welcome to <a href="https://nextjs.org">Next.js!</a>
-            </h1>
+          </h1>
 
-            <Link href="/sample">
-              <button>サンプルページへ</button>
-            </Link>
+          <Link href="/sample">
+            <button>サンプルページへ</button>
+          </Link>
 
-            <Link href="/sample/sample">
-              <button>サンプルページ2へ</button>
-            </Link>
+          <Link href="/sample/sample">
+            <button>サンプルページ2へ</button>
+          </Link>
 
-            <p className="description">
+          <p className="description">
               Get started by editing <code>pages/index.js</code>
-            </p>
+          </p>
 
-            <div className="grid">
-              <a href="https://nextjs.org/docs" className="card">
-                <h3>Documentation &rarr;</h3>
-                <p>Find in-depth information about Next.js features and API.</p>
-              </a>
-
-              <a href="https://nextjs.org/learn" className="card">
-                <h3>Learn &rarr;</h3>
-                <p>Learn about Next.js in an interactive course with quizzes!</p>
-              </a>
-
-              <a
-                  href="https://github.com/vercel/next.js/tree/master/examples"
-                  className="card"
-              >
-                <h3>Examples &rarr;</h3>
-                <p>Discover and deploy boilerplate example Next.js projects.</p>
-              </a>
-
-              <a
-                  href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                  className="card"
-              >
-                <h3>Deploy &rarr;</h3>
-                <p>
-                  Instantly deploy your Next.js site to a public URL with Vercel.
-                </p>
-              </a>
-            </div>
-          </main>
-
-          <footer>
-            <a
-                href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-              Powered by{' '}
-              <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
+          <div className="grid">
+            <a href="https://nextjs.org/docs" className="card">
+              <h3>Documentation &rarr;</h3>
+              <p>Find in-depth information about Next.js features and API.</p>
             </a>
-          </footer>
 
-          <style jsx>{`
+            <a href="https://nextjs.org/learn" className="card">
+              <h3>Learn &rarr;</h3>
+              <p>Learn about Next.js in an interactive course with quizzes!</p>
+            </a>
+
+            <a
+              href="https://github.com/vercel/next.js/tree/master/examples"
+              className="card"
+            >
+              <h3>Examples &rarr;</h3>
+              <p>Discover and deploy boilerplate example Next.js projects.</p>
+            </a>
+
+            <a
+              href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+              className="card"
+            >
+              <h3>Deploy &rarr;</h3>
+              <p>
+                  Instantly deploy your Next.js site to a public URL with Vercel.
+              </p>
+            </a>
+          </div>
+        </main>
+
+        <footer>
+          <a
+            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+              Powered by{' '}
+            <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
+          </a>
+        </footer>
+
+        <style jsx>{`
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -212,7 +212,7 @@ class Home extends React.Component {
         }
       `}</style>
 
-          <style jsx global>{`
+        <style jsx global>{`
         html,
         body {
           padding: 0;
@@ -226,8 +226,8 @@ class Home extends React.Component {
           box-sizing: border-box;
         }
       `}</style>
-        </div>
-    );
+      </div>
+    )
   }
 }
 
