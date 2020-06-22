@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "lint": "eslint pages/*.tsx pages/**/*.tsx",
+    "lint:fix": "eslint --fix pages/*.tsx pages/**/*.tsx"
+
   },
   "dependencies": {
     "next": "9.4.4",
