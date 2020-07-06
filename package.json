@@ -9,9 +9,9 @@
     "export": "next export",
     "lint": "eslint pages/*.tsx pages/**/*.tsx",
     "lint:fix": "eslint --fix pages/*.tsx pages/**/*.tsx"
-
   },
   "dependencies": {
+    "bulma": "^0.9.0",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1"
