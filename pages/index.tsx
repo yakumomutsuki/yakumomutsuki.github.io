@@ -63,7 +63,8 @@ class Home extends React.Component {
                 {/*</ul>*/}
               </aside>
             </div>
-            <div className="column">Auto</div>
+            <div className="column">Auto
+            </div>
           </div>
         </div>
 
