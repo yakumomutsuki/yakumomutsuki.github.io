@@ -20,50 +20,40 @@ class Home extends React.Component {
         <Head>
           <title>Create Next App</title>
           <link rel="icon" href="/favicon.ico" />
+          <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
         </Head>
 
         <div className="content">
           <div className="columns">
             {/* side-bar */}
             <div className="column is-two-fifths">
-              <aside className="menu">
-                <div className="is-flex center">
-                  <figure className="image is-128x128">
-                    <img className="is-rounded" src="/profile.jpeg" />
-                  </figure>
-                </div>
-                {/*<ul className="menu-list">*/}
-                {/*  <li><a>Dashboard</a></li>*/}
-                {/*  <li><a>Customers</a></li>*/}
-                {/*</ul>*/}
-                {/*<p className="menu-label">*/}
-                {/*  Administration*/}
-                {/*</p>*/}
-                {/*<ul className="menu-list">*/}
-                {/*  <li><a>Team Settings</a></li>*/}
-                {/*  <li>*/}
-                {/*    <a className="is-active">Manage Your Team</a>*/}
-                {/*    <ul>*/}
-                {/*      <li><a>Members</a></li>*/}
-                {/*      <li><a>Plugins</a></li>*/}
-                {/*      <li><a>Add a member</a></li>*/}
-                {/*    </ul>*/}
-                {/*  </li>*/}
-                {/*  <li><a>Invitations</a></li>*/}
-                {/*  <li><a>Cloud Storage Environment Settings</a></li>*/}
-                {/*  <li><a>Authentication</a></li>*/}
-                {/*</ul>*/}
-                {/*<p className="menu-label">*/}
-                {/*  Transactions*/}
-                {/*</p>*/}
-                {/*<ul className="menu-list">*/}
-                {/*  <li><a>Payments</a></li>*/}
-                {/*  <li><a>Transfers</a></li>*/}
-                {/*  <li><a>Balance</a></li>*/}
-                {/*</ul>*/}
-              </aside>
+              <div className="is-flex center">
+                <figure className="image is-128x128">
+                  <img className="is-rounded" src="/profile.jpeg" />
+                </figure>
+              </div>
+
+              <div className="has-text-centered">
+                <p>yakumomutsuki</p>
+                <br />
+                <p>杉並区在住のフロントエンド/サーバーサイドのエンジニアです。<br />勤務先は汐留のWeb系企業です。</p>
+
+                <p>Working in IT / Web at Minato, Japan.<br />Developer of front-end, server-side.<br />Living in Suginami, Japan.<br /></p>
+              </div>
+
+              <p className="menu-label">
+                SNS
+              </p>
+              <ul className="menu-list is-unstyled">
+                <li>
+                  <a className="fab fa-twitter" href="https://twitter.com/yakumomutsuki">&nbsp;Twitter</a>
+                </li>
+                <li>
+                  <a className="fab fa-github" href="https://github.com/yakumomutsuki">&nbsp;GitHub</a>
+                </li>
+              </ul>
             </div>
-            <div className="column">Auto
+            <div className="column">
             </div>
           </div>
         </div>
@@ -71,6 +61,9 @@ class Home extends React.Component {
         <style jsx>{`
           .center {
             justify-content: center;
+          }
+          ul.is-unstyled {
+            list-style: none;
           }
         `}</style>
       </div>
