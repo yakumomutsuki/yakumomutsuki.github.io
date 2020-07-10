@@ -5,29 +5,21 @@ import * as React from 'react'
 
 export const Header = () => {
   return <>
-    <header className="header">
-      <h1 className="is-size-4-mobile is-size-1-tablet">
-        yakumomutsuki.github.io
-      </h1>
+    <header className="hero is-dark">
+      <div className="hero-body">
+        <div className="container">
+          <h1 className="title has-text-centered">
+            yakumomutsuki.github.io
+          </h1>
+        </div>
+      </div>
     </header>
 
     <style jsx>{`
-    .header {
-      background-color: #0fbcf9;
-      height: 80px;
-      text-align: center;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-align-items: center;
-      align-items: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      width: 100%;
-    }
-    .h1 {
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-  `}</style>
+      .hero {
+        margin-bottom: 1rem;
+      }
+    `}
+    </style>
   </>
 }
