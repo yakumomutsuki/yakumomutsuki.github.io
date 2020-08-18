@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Head from 'next/head'
+import { Html } from 'next/document'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 
@@ -8,6 +9,8 @@ import 'bulma/css/bulma.min.css'
 export default function MyApp ({ Component, pageProps }) {
   // eslint-disable-next-line react/react-in-jsx-scope
   return <>
+
+    <Html lang="ja" />
     <Head>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>

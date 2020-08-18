@@ -29,7 +29,7 @@ class Home extends React.Component {
               <div className="column is-two-fifths">
                 <div className="is-flex center">
                   <figure className="image is-128x128">
-                    <img className="is-rounded" src="/profile.jpeg"/>
+                    <img className="is-rounded" src="/profile.jpeg" alt="profile-image"/>
                   </figure>
                 </div>
 
