@@ -6,6 +6,7 @@ class Document extends NextDocument<{}> {
     return (
       <Html lang="ja">
         <Head>
+          <meta name="description" content="This content is yakumomutsuki's profile page." />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
 

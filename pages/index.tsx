@@ -47,10 +47,10 @@ class Home extends React.Component {
                 </p>
                 <ul className="menu-list is-unstyled">
                   <li>
-                    <a className="fab fa-twitter" href="https://twitter.com/yakumomutsuki">&nbsp;Twitter</a>
+                    <a className="fab fa-twitter touchable" href="https://twitter.com/yakumomutsuki">&nbsp;Twitter</a>
                   </li>
                   <li>
-                    <a className="fab fa-github" href="https://github.com/yakumomutsuki">&nbsp;GitHub</a>
+                    <a className="fab fa-github touchable" href="https://github.com/yakumomutsuki">&nbsp;GitHub</a>
                   </li>
                 </ul>
               </div>
@@ -104,6 +104,9 @@ class Home extends React.Component {
           h2.heading {
             border-bottom: 1px solid black;
           }
+          li > a.touchable {
+            padding: 1rem .75rem
+          }          
         `}</style>
       </>
     )
