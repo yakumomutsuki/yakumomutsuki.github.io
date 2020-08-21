@@ -17,8 +17,7 @@ class Home extends React.Component {
     return (
       <>
         <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico"/>
+          <title>yakumomutsuki.github.io</title>
           <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"/>
         </Head>
 
@@ -104,9 +103,24 @@ class Home extends React.Component {
           h2.heading {
             border-bottom: 1px solid black;
           }
+          
           li > a.touchable {
-            padding: 1rem .75rem
-          }          
+            padding: 1rem .75rem;
+          }
+          
+          .fa-twitter:hover::before, .fa-github:hover::before {
+            animation:1s linear rotation;
+            display: inline-block;
+          }
+          
+          @keyframes rotation {
+            0%{ 
+              transform:rotate(0);
+            }
+            100%{
+              transform:rotate(360deg);
+            }
+          }
         `}</style>
       </>
     )
