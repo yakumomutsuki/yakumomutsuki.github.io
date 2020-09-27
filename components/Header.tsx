@@ -8,7 +8,7 @@ export const Header = () => {
     <header className="hero is-dark">
       <div className="hero-body">
         <div className="container">
-          <h1 className="title has-text-centered">
+          <h1 className="title has-text-centered is-size-4-mobile">
             yakumomutsuki.github.io
           </h1>
         </div>

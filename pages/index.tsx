@@ -2,6 +2,14 @@ import * as React from 'react'
 import Head from 'next/head'
 
 class Home extends React.Component {
+  qualifications = [
+    'Java SE 8 Programmer I (2019-01)',
+    'LPIC Level 1 (2019-09)',
+    'HTML5 Professional Exam Level1 (2020-01)',
+    'HTML5 Professional Exam Level2 (2020-02)',
+    'OSS-DB Exam Silver (2020-09)'
+  ]
+
   componentDidMount (): void {
     const search = location.search.substring(1)
     if (search) {
@@ -75,18 +83,7 @@ class Home extends React.Component {
                   <h2 className="heading">Certified</h2>
                   <div className="content">
                     <ul>
-                      <li>
-                        Java SE 8 Programmer I (2019-01)
-                      </li>
-                      <li>
-                        LPIC Level 1 (2019-09)
-                      </li>
-                      <li>
-                        HTML5 Professional Exam Level1 (2020-01)
-                      </li>
-                      <li>
-                        HTML5 Professional Exam Level2 (2020-02)
-                      </li>
+                      {this.qualifications.map((qualification, index) => <li key={index}>{ qualification }</li>)}
                     </ul>
                   </div>
                 </section>
