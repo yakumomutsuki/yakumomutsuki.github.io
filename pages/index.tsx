@@ -43,10 +43,10 @@ class Home extends React.Component {
                 <div className="has-text-centered">
                   <p>yakumomutsuki</p>
                   <br/>
-                  <p>杉並区在住のフロントエンド/サーバーサイドのエンジニアです。<br/>勤務先は汐留のWeb系企業です。</p>
+                  <p>藤沢市在住のフロントエンド/サーバーサイドのエンジニアです。<br/>勤務先は汐留のWeb系企業です。</p>
 
                   <p>Working in IT / Web at Minato, Japan.<br/>Developer of frontend, backend.<br/>Living in
-                    Suginami, Japan.<br/></p>
+                    Fijisawa, Japan.<br/></p>
                 </div>
 
                 <p className="menu-label">
