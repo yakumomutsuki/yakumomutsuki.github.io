@@ -1,33 +1,40 @@
-import * as React from 'react'
+import React from 'react'
+import NextApp from 'next/app'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 
+// include css
 import 'bulma/css/bulma.min.css'
 
-export default function MyApp ({ Component, pageProps }) {
-  // eslint-disable-next-line react/react-in-jsx-scope
-  return <>
-    <Header />
+export default class App extends NextApp {
+  render() {
+    const { Component, pageProps } = this.props
+    return (
+      <>
+        <Header />
 
-    {/* main contents */}
-    <Component {...pageProps} />
+        <Component {...pageProps} />
 
-    <Footer />
+        <Footer />
 
-    <style jsx global>{`
-      /* タブレット・モバイル用 */
-      @media screen and (max-width: 1023px) {
-        .lead,.side {
-          padding:1.5rem;
-        }
-      }
-      
-      /* PCデバイス用  */
-      @media screen and (min-width: 1024px) {
-        .lead,.side {
-          padding: 3rem;
-        }
-      }
-    `}</style>
-  </>
+        <style jsx global>{`
+          /* タブレット・モバイル用 */
+          @media screen and (max-width: 1023px) {
+            .lead,
+            .side {
+              padding: 1.5rem;
+            }
+          }
+
+          /* PCデバイス用  */
+          @media screen and (min-width: 1024px) {
+            .lead,
+            .side {
+              padding: 3rem;
+            }
+          }
+        `}</style>
+      </>
+    )
+  }
 }
