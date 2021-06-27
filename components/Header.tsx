@@ -4,22 +4,23 @@ import * as React from 'react'
 // https://flatuicolors.com/palette/se
 
 export const Header = () => {
-  return <>
-    <header className="hero is-dark">
-      <div className="hero-body">
-        <div className="container">
-          <h1 className="title has-text-centered is-size-4-mobile">
-            yakumomutsuki.github.io
-          </h1>
+  return (
+    <>
+      <header className="hero is-dark">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title has-text-centered is-size-4-mobile">yakumomutsuki.github.io</h1>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <style jsx>{`
-      .hero {
-        margin-bottom: 1rem;
-      }
-    `}
-    </style>
-  </>
+      <style jsx>
+        {`
+          .hero {
+            margin-bottom: 1rem;
+          }
+        `}
+      </style>
+    </>
+  )
 }

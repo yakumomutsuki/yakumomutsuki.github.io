@@ -2,25 +2,17 @@ import React from 'react'
 
 class Error extends React.Component {
   // @Note componentDidMountでは、クライアントサイドのみで実行したい処理を実装する
-  componentDidMount () {
+  componentDidMount() {
     const { pathname } = location
-    const allowedPathNames = [
-      '/',
-      '/sample',
-      '/sample/sample'
-    ]
+    const allowedPathNames = ['/', '/sample', '/sample/sample', '/asobisystem/mordern-internet-roujinkai-1']
 
     if (allowedPathNames.includes(pathname)) {
       location.href = `/?originalPath=${pathname}`
     }
   }
 
-  render () {
-    return (
-      <div>
-                ...
-      </div>
-    )
+  render() {
+    return <div>...</div>
   }
 }
 
