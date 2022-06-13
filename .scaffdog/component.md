@@ -12,7 +12,7 @@ questions:
 - constant_key: value
 - computed_key: `{{ inputs.name | pascal }}`
 
-# `{{ inputs.name | camel }}.tsx`
+# `{{ inputs.name | camel }}/{{ inputs.name | camel }}.tsx`
 
 ```typescript
 import React from 'react';
@@ -22,7 +22,7 @@ export const {{ inputs.name | pascal }} = () => {
 };
 ```
 
-# `{{ inputs.name | camel }}.stories.tsx`
+# `{{ inputs.name | camel }}/{{ inputs.name | camel }}.stories.tsx`
 
 ```tyoescript
 import { expect } from '@storybook/jest';
@@ -45,7 +45,7 @@ Default.play = async ({ canvasElement }) => {
 };
 ```
 
-# `{{ inputs.name | camel }}.module.css`
+# `{{ inputs.name | camel }}/{{ inputs.name | camel }}.module.css`
 
 ```css
 .{{ inputs.name | pascal }} {
@@ -53,7 +53,7 @@ Default.play = async ({ canvasElement }) => {
 }
 ```
 
-# index.ts
+# `{{ inputs.name | camel }}/index.ts`
 
 ```typescript
 import { {{ inputs.name | pascal }} } from './{{ inputs.name | camel }}';
