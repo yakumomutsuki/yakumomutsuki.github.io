@@ -27,6 +27,7 @@ const Home: NextPage = () => {
       <Head>
         <title>yakumomutsuki.github.io</title>
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
+        <meta name="description" content="yakumomutsuki's profile" />
       </Head>
 
       <Header />
@@ -41,7 +42,7 @@ const Home: NextPage = () => {
                   <img
                     className="is-rounded"
                     src="/profile.jpeg"
-                    alt="profile icon"
+                    alt=""
                     width={400}
                     height={400}
                     decoding="async"
