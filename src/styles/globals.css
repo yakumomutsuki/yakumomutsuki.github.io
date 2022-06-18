@@ -14,3 +14,19 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+/* タブレット・モバイル用 */
+@media screen and (max-width: 1023px) {
+  .lead,
+  .side {
+    padding: 1.5rem;
+  }
+}
+/* PCデバイス用  */
+@media screen and (min-width: 1024px) {
+  .lead,
+  .side {
+    padding: 3rem;
+  }
+}

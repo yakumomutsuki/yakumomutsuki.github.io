@@ -2,7 +2,6 @@ import type { NextPage } from 'next';
 // import { useTranslation, LanguageSwitcher } from 'next-export-i18n';
 import Head from 'next/head';
 import styles from './index.module.css';
-// import styles from '../styles/Home.module.css';
 // import { Counter } from '@/components/common/atoms/counter';
 
 import { Header } from '@/components/common/atoms/header';
