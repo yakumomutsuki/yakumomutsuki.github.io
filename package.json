@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "serve": "next build && next export && serve ./out",
+    "export": "next build && next export",
+    "serve": "yarn export && serve ./out",
     "lint": "next lint --dir src",
     "lint:fix": "yarn lint --fix",
     "html:lint": "markuplint **/*.tsx",
