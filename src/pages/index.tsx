@@ -26,8 +26,8 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>yakumomutsuki.github.io</title>
-        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
         <meta name="description" content="yakumomutsuki's profile" />
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
       </Head>
 
       <Header />
@@ -39,14 +39,7 @@ const Home: NextPage = () => {
             <div className="column is-two-fifths">
               <div className="is-flex center is-justify-content-center">
                 <figure className="image is-128x128">
-                  <img
-                    className="is-rounded"
-                    src="/profile.jpeg"
-                    alt=""
-                    width={400}
-                    height={400}
-                    decoding="async"
-                  />
+                  <img className="is-rounded" src="/profile.jpeg" alt="" width={400} height={400} decoding="async" />
                 </figure>
               </div>
 
