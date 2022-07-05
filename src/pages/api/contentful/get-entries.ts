@@ -1,13 +1,13 @@
 import { createClient, EntryCollection } from 'contentful';
+import { IBlog } from './codegen/contentful';
 import { config, transformContentfulError } from './index';
-import {DataResponse, HttpResponse} from '@/pages/api/types';
+import { DataResponse, HttpResponse } from '@/pages/api/types';
 
-// TODO EntryCollection のジェネリクス引数は一旦anyで
-export const getEntries = (): Promise<HttpResponse<EntryCollection<any>>> => {
+export const getEntries = (): Promise<HttpResponse<EntryCollection<IBlog>>> => {
   return createClient(config)
-    .getEntries()
+    .getEntries<IBlog>()
     .then((entries) => {
-      const response: DataResponse<EntryCollection<any>> = {
+      const response: DataResponse<EntryCollection<IBlog>> = {
         data: entries,
         err: null,
         status: 200,

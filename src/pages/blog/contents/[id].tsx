@@ -1,16 +1,16 @@
 import { ParsedUrlQuery } from 'node:querystring';
-import { Entry } from 'contentful';
+import { compiler } from 'markdown-to-jsx';
 import { GetStaticProps, GetStaticPaths, GetStaticPathsResult, GetStaticPropsResult } from 'next';
 import { highlightAll } from 'prismjs';
 import React, { useEffect } from 'react';
+import { IBlogFields } from '@/pages/api/contentful/codegen/contentful'
 import { getEntries } from '@/pages/api/contentful/get-entries';
 import { getEntry } from '@/pages/api/contentful/get-entry';
 import 'prismjs/themes/prism-tomorrow.min.css';
 
+
 // Types
-interface Props {
-  content: Entry<unknown>;
-}
+interface Props extends IBlogFields {}
 
 interface Params extends ParsedUrlQuery {
   id: string;
@@ -29,12 +29,9 @@ export const getStaticPaths: GetStaticPaths = async (): Promise<GetStaticPathsRe
 };
 
 // GetStaticProps
-interface StaticPropsResult {
-  content: Entry<unknown>;
-}
 export const getStaticProps: GetStaticProps<Props, Params> = async (
   context,
-): Promise<GetStaticPropsResult<StaticPropsResult>> => {
+): Promise<GetStaticPropsResult<Props>> => {
   // 記事詳細APIからデータを取得
 
   const { id } = context?.params || {};
@@ -46,7 +43,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (
   if (data && data.sys) {
     return {
       props: {
-        content: data,
+        ...data.fields,
       },
     };
   }
@@ -55,16 +52,24 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (
 };
 
 const Blog: React.FC<Props> = (props) => {
-  console.log(props.content);
+  // @ts-ignore
+  // const { title, headerImage, body, createdAt, editedAt } = props
+
+  console.log(props)
+
+  // const body = props.content.fields.body;
   useEffect(() => {
     highlightAll();
   }, []);
 
   return (
     <main className="container">
-      <pre className="line-numbers">
-        <code className="lang-javascript">{JSON.stringify(props.content)}</code>
-      </pre>
+      {/*<pre className="line-numbers">*/}
+      {/*  <code className="lang-javascript">{JSON.stringify(props.content)}</code>*/}
+      {/*</pre>*/}
+      <div className="content">
+
+        {compiler(props.body, { wrapper: null })}</div>
     </main>
   );
 };
