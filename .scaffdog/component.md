@@ -26,18 +26,21 @@ export const {{ inputs.name | pascal }} = () => {
 
 ```tyoescript
 import { expect } from '@storybook/jest';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import { within, userEvent } from '@storybook/testing-library';
 import React from 'react';
 import { {{ inputs.name | pascal }} } from './{{ inputs.name | camel }}';
 
+type T = typeof {{ inputs.name | pascal }};
+type Story = ComponentStoryObj<T>;
+
 export default {
   title: '{{ inputs.name | pascal }}',
   component: {{ inputs.name | pascal }},
-} as ComponentMeta<typeof {{ inputs.name | pascal }}>;
+  args: {},
+} as ComponentMeta<T>;
 
-const Template: ComponentStory<typeof {{ inputs.name | pascal }}> = () => <{{ inputs.name | pascal }} />;
-export const Default = Template.bind({});
+export const Default: Story = {};
 
 // More on interaction testing: https://storybook.js.org/docs/react/writing-tests/interaction-testing
 Default.play = async ({ canvasElement }) => {
