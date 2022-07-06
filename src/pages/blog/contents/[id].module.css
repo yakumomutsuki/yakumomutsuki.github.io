@@ -1,0 +1,8 @@
+.heading {
+    display: block;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+    padding: 0.5rem 0;
+}

@@ -3,11 +3,12 @@ import { compiler } from 'markdown-to-jsx';
 import { GetStaticProps, GetStaticPaths, GetStaticPathsResult, GetStaticPropsResult } from 'next';
 import { highlightAll } from 'prismjs';
 import React, { useEffect } from 'react';
-import { IBlogFields } from '@/pages/api/contentful/codegen/contentful'
+import { CustomCode } from '@/components/feature/blog/custom-code'
+import { IBlogFields } from '@/pages/api/contentful/codegen/contentful';
 import { getEntries } from '@/pages/api/contentful/get-entries';
 import { getEntry } from '@/pages/api/contentful/get-entry';
 import 'prismjs/themes/prism-tomorrow.min.css';
-
+import styles from '@/pages/blog/contents/[id].module.css';
 
 // Types
 interface Props extends IBlogFields {}
@@ -29,11 +30,8 @@ export const getStaticPaths: GetStaticPaths = async (): Promise<GetStaticPathsRe
 };
 
 // GetStaticProps
-export const getStaticProps: GetStaticProps<Props, Params> = async (
-  context,
-): Promise<GetStaticPropsResult<Props>> => {
+export const getStaticProps: GetStaticProps<Props, Params> = async (context): Promise<GetStaticPropsResult<Props>> => {
   // 記事詳細APIからデータを取得
-
   const { id } = context?.params || {};
   if (typeof id !== 'string') {
     throw new Error('Error: No ID');
@@ -52,24 +50,24 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (
 };
 
 const Blog: React.FC<Props> = (props) => {
-  // @ts-ignore
-  // const { title, headerImage, body, createdAt, editedAt } = props
-
-  console.log(props)
-
-  // const body = props.content.fields.body;
   useEffect(() => {
     highlightAll();
   }, []);
 
   return (
     <main className="container">
-      {/*<pre className="line-numbers">*/}
-      {/*  <code className="lang-javascript">{JSON.stringify(props.content)}</code>*/}
-      {/*</pre>*/}
-      <div className="content">
-
-        {compiler(props.body, { wrapper: null })}</div>
+      <div className="lead">
+        <section className="content">
+          <p>{props.createdAt}</p>
+          <h1 className={styles.heading}>{props.title}</h1>
+          {compiler(props.body, {
+            wrapper: null,
+            overrides: {
+              code: CustomCode,
+            },
+          })}
+        </section>
+      </div>
     </main>
   );
 };
