@@ -12,7 +12,7 @@ questions:
 - constant_key: value
 - computed_key: `{{ inputs.name | pascal }}`
 
-# `{{ inputs.name | camel }}/{{ inputs.name | camel }}.tsx`
+# `{{ inputs.name | kebab }}/{{ inputs.name | kebab }}.tsx`
 
 ```typescript
 import React from 'react';
@@ -22,14 +22,14 @@ export const {{ inputs.name | pascal }} = () => {
 };
 ```
 
-# `{{ inputs.name | camel }}/{{ inputs.name | camel }}.stories.tsx`
+# `{{ inputs.name | kebab }}/{{ inputs.name | kebab }}.stories.tsx`
 
 ```tyoescript
 import { expect } from '@storybook/jest';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import { within, userEvent } from '@storybook/testing-library';
 import React from 'react';
-import { {{ inputs.name | pascal }} } from './{{ inputs.name | camel }}';
+import { {{ inputs.name | pascal }} } from './{{ inputs.name | kebab }}';
 
 type T = typeof {{ inputs.name | pascal }};
 type Story = ComponentStoryObj<T>;
@@ -48,7 +48,7 @@ Default.play = async ({ canvasElement }) => {
 };
 ```
 
-# `{{ inputs.name | camel }}/{{ inputs.name | camel }}.module.css`
+# `{{ inputs.name | kebab }}/{{ inputs.name | kebab }}.module.css`
 
 ```css
 .{{ inputs.name | pascal }} {
@@ -56,10 +56,10 @@ Default.play = async ({ canvasElement }) => {
 }
 ```
 
-# `{{ inputs.name | camel }}/index.ts`
+# `{{ inputs.name | kebab }}/index.ts`
 
 ```typescript
-import { {{ inputs.name | pascal }} } from './{{ inputs.name | camel }}';
+import { {{ inputs.name | pascal }} } from './{{ inputs.name | kebab }}';
 
 export { {{ inputs.name | pascal }} }
 ```
