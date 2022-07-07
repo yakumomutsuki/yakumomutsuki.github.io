@@ -30,10 +30,14 @@ Default.play = async ({ canvasElement }) => {
   const block = await canvas.getByTestId('custom-code-block');
 
   // lang-js は language-js に変換されていること
+  expect(block.className).not.toBe('lang-js');
   expect(block.className).toBe('language-js');
 
-  // pre code になっていること
-  expect(block.firstChild).toContainHTML('code');
+  // タグは code であること
+  expect(block.tagName).toBe('CODE')
+
+  // inner text は props.children を表示すること
+  expect(block.innerText).toBe('Hello, world!!');
 };
 
 Inline.play = async ({ canvasElement }) => {
@@ -42,6 +46,9 @@ Inline.play = async ({ canvasElement }) => {
 
   // className は存在しないこと
   expect(block.className).toBe('');
+
+  // タグは span であること
+  expect(block.tagName).toBe('SPAN')
 
   // span の中に children が設定されること
   expect(block.innerText).toBe('Hello, ruby!!');

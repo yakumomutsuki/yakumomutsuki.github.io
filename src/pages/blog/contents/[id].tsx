@@ -4,6 +4,7 @@ import { GetStaticProps, GetStaticPaths, GetStaticPathsResult, GetStaticPropsRes
 import { highlightAll } from 'prismjs';
 import React, { useEffect } from 'react';
 import { CustomCode } from '@/components/features/blog/custom-code';
+import { CustomPre } from '@/components/features/blog/custom-pre';
 import { IBlogFields } from '@/pages/api/contentful/codegen/contentful';
 import { getEntries } from '@/pages/api/contentful/get-entries';
 import { getEntry } from '@/pages/api/contentful/get-entry';
@@ -63,6 +64,7 @@ const Blog: React.FC<Props> = (props) => {
           {compiler(props.body, {
             wrapper: null,
             overrides: {
+              pre: CustomPre,
               code: CustomCode,
             },
           })}
