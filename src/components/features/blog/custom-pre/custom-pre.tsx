@@ -9,7 +9,11 @@ interface Props {
 export const CustomPre: React.FC<Props> = ({ children }): React.ReactElement => {
   const { props: cProps } = children;
   return (
-    <pre className={cProps && cProps.className ? cProps?.className.replace('lang', 'language') : ''} tabIndex={0} data-testid="custom-pre">
+    <pre
+      className={cProps && cProps.className ? cProps?.className.replace('lang', 'language') : ''}
+      tabIndex={0}
+      data-testid="custom-pre"
+    >
       {children}
     </pre>
   );

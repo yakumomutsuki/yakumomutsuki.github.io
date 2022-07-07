@@ -1,7 +1,7 @@
 import { expect } from '@storybook/jest';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import { within } from '@storybook/testing-library';
-import React from 'react'
+import React from 'react';
 import { CustomPre } from './custom-pre';
 
 type T = typeof CustomPre;
@@ -10,7 +10,7 @@ type Story = ComponentStoryObj<T>;
 export default {
   component: CustomPre,
   args: {
-    children: React.createElement<{className: string}>('p', { className: 'lang-js'}),
+    children: React.createElement<{ className: string }>('p', { className: 'lang-js' }),
   },
 } as ComponentMeta<T>;
 
@@ -26,5 +26,5 @@ Default.play = async ({ canvasElement }) => {
   expect(block.className).toBe('language-js');
 
   // タグは pre であること
-  expect(block.tagName).toBe('PRE')
+  expect(block.tagName).toBe('PRE');
 };

@@ -15,7 +15,11 @@ export const CustomCode: React.FC<Props> = (props): React.ReactElement => {
   }
 
   // Handle block code, with highlight for example
-  return <code data-testid="custom-code-block" className={className ? className.replace('lang', 'language') : ''}>{children}</code>;
+  return (
+    <code data-testid="custom-code-block" className={className ? className.replace('lang', 'language') : ''}>
+      {children}
+    </code>
+  );
 };
 
 CustomCode.defaultProps = {

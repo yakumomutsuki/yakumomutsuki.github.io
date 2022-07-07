@@ -34,7 +34,7 @@ Default.play = async ({ canvasElement }) => {
   expect(block.className).toBe('language-js');
 
   // タグは code であること
-  expect(block.tagName).toBe('CODE')
+  expect(block.tagName).toBe('CODE');
 
   // inner text は props.children を表示すること
   expect(block.innerText).toBe('Hello, world!!');
@@ -48,7 +48,7 @@ Inline.play = async ({ canvasElement }) => {
   expect(block.className).toBe('');
 
   // タグは span であること
-  expect(block.tagName).toBe('SPAN')
+  expect(block.tagName).toBe('SPAN');
 
   // span の中に children が設定されること
   expect(block.innerText).toBe('Hello, ruby!!');
