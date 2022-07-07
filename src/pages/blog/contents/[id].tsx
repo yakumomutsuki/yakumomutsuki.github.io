@@ -3,7 +3,7 @@ import { compiler } from 'markdown-to-jsx';
 import { GetStaticProps, GetStaticPaths, GetStaticPathsResult, GetStaticPropsResult } from 'next';
 import { highlightAll } from 'prismjs';
 import React, { useEffect } from 'react';
-import { CustomCode } from '@/components/features/blog/custom-code'
+import { CustomCode } from '@/components/features/blog/custom-code';
 import { IBlogFields } from '@/pages/api/contentful/codegen/contentful';
 import { getEntries } from '@/pages/api/contentful/get-entries';
 import { getEntry } from '@/pages/api/contentful/get-entry';
