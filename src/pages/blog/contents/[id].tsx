@@ -6,6 +6,7 @@ import React, { useEffect } from 'react';
 import { getEntry, getEntries, IBlogFields } from '@/api/libs/contentful';
 import { CustomCode } from '@/components/features/blog/custom-code';
 import { CustomPre } from '@/components/features/blog/custom-pre';
+import { PostTime } from '@/components/features/blog/post-time';
 import 'prismjs/themes/prism-tomorrow.min.css';
 import styles from '@/pages/blog/contents/[id].module.css';
 
@@ -57,7 +58,7 @@ const Blog: React.FC<Props> = (props) => {
     <main className="container">
       <div className="lead">
         <section className="content">
-          <p>{props.createdAt}</p>
+          <PostTime type={'created'} dateTimeText={props.createdAt} />
           <h1 className={styles.heading}>{props.title}</h1>
           {compiler(props.body, {
             wrapper: null,
