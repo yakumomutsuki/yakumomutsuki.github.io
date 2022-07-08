@@ -1,7 +1,8 @@
-import {createClient, Entry} from 'contentful';
-import {IBlogFields} from './codegen/contentful';
-import { config, transformContentfulError } from './index';
-import { DataResponse, HttpResponse } from '@/pages/api/types';
+import { createClient, Entry } from 'contentful';
+import { config } from '../config';
+import { transformContentfulError } from '../transform-contentful-error';
+import { IBlogFields } from '../types';
+import { DataResponse, HttpResponse } from '@/api/types';
 
 export const getEntry = (entryId: string): Promise<HttpResponse<Entry<IBlogFields>>> => {
   return createClient(config)

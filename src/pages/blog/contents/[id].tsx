@@ -3,11 +3,9 @@ import { compiler } from 'markdown-to-jsx';
 import { GetStaticProps, GetStaticPaths, GetStaticPathsResult, GetStaticPropsResult } from 'next';
 import { highlightAll } from 'prismjs';
 import React, { useEffect } from 'react';
+import { getEntry, getEntries, IBlogFields } from '@/api/libs/contentful';
 import { CustomCode } from '@/components/features/blog/custom-code';
 import { CustomPre } from '@/components/features/blog/custom-pre';
-import { IBlogFields } from '@/pages/api/contentful/codegen/contentful';
-import { getEntries } from '@/pages/api/contentful/get-entries';
-import { getEntry } from '@/pages/api/contentful/get-entry';
 import 'prismjs/themes/prism-tomorrow.min.css';
 import styles from '@/pages/blog/contents/[id].module.css';
 
