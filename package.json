@@ -8,13 +8,12 @@
     "dev:path": "pathpida --watch",
     "build": "next build && next export",
     "serve": "yarn build && serve ./out",
-    "lint": "next lint --dir src",
-    "html:lint": "markuplint **/*.tsx",
-    "format": "yarn lint --fix && prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
+    "lint": "next lint --dir src && markuplint **/*.tsx",
+    "format": "next lint --dir src --fix && prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test-storybook": "test-storybook",
-    "scaffold": "scaffdog",
+    "scaffold": "scaffdog generate",
     "contentful-typescript-codegen": "CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN=xxxxx CONTENTFUL_SPACE_ID=xxxxx CONTENTFUL_ENVIRONMENT=xxxxx contentful-typescript-codegen --output src/pages/api/contentful/codegen/contentful.d.ts"
   },
   "dependencies": {
