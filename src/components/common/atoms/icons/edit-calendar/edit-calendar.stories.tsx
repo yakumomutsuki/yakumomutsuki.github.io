@@ -7,15 +7,19 @@ type T = typeof EditCalendar;
 type Story = ComponentStoryObj<T>;
 
 export default {
-  title: 'EditCalendar',
   component: EditCalendar,
   args: {
     alt: '作成日',
-    scale: 2,
   },
 } as ComponentMeta<T>;
 
 export const Default: Story = {};
+
+export const TwiceScale: Story = {
+  args: {
+    scale: 2,
+  },
+};
 
 Default.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
@@ -23,6 +27,11 @@ Default.play = async ({ canvasElement }) => {
 
   // alt は設定した値となること
   expect(img.alt).toBe('作成日');
+};
+
+TwiceScale.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const img = await canvas.getByTestId<HTMLImageElement>('edit-calendar');
 
   // scale 設定により width、height はそれぞれ 24*2 の値を取ること
   expect(img.width).toBe(48);
