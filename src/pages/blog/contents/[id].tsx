@@ -1,9 +1,10 @@
 import { ParsedUrlQuery } from 'node:querystring';
 import { compiler } from 'markdown-to-jsx';
 import { GetStaticProps, GetStaticPaths, GetStaticPathsResult, GetStaticPropsResult } from 'next';
+import Head from 'next/head';
 import { highlightAll } from 'prismjs';
 import React, { useEffect } from 'react';
-import { getEntry, getEntries, IBlogFields } from '@/api/libs/contentful';
+import { getEntry, getEntries, IBlogFields, Asset } from '@/api/libs/contentful';
 import { CustomCode } from '@/components/features/blog/custom-code';
 import { CustomPre } from '@/components/features/blog/custom-pre';
 import { PostTime } from '@/components/features/blog/post-time';
@@ -49,27 +50,54 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context): Pr
   throw new Error(JSON.stringify(err));
 };
 
+
+const BlogImage: React.FC<{ headerImage: Asset | undefined }> = ({headerImage}): React.ReactElement | null => {
+  if (headerImage && headerImage.sys) {
+     const values: React.ComponentProps<'img'> = {
+      width: '100%',
+      height: 200,
+      src: `https:${headerImage.fields.file.url}`
+    }
+
+    return <img className={styles.BlogContents__Img} {...values} alt=''/>
+  }
+
+  return null
+}
+
 const Blog: React.FC<Props> = (props) => {
   useEffect(() => {
     highlightAll();
   }, []);
 
   return (
-    <main className="container">
-      <div className="lead">
-        <section className="content">
-          <PostTime type={'created'} dateTimeText={props.createdAt} />
-          <h1 className={styles.heading}>{props.title}</h1>
-          {compiler(props.body, {
-            wrapper: null,
-            overrides: {
-              pre: CustomPre,
-              code: CustomCode,
-            },
-          })}
-        </section>
-      </div>
-    </main>
+      <>
+        <Head>
+          <title>{ `yakumomutsuki | ${props.title}` }</title>
+          <meta name="description" content={`yakumomutsuki | ${props.title}`} />
+        </Head>
+
+        <main className="container">
+          <BlogImage headerImage={props.headerImage}  />
+
+          <div className="lead">
+            <section className={`content ${styles.BlogContents__Section}`}>
+              <PostTime type={'created'} dateTimeText={props.createdAt} />
+              <h1 className={styles.BlogContents__Heading}>{props.title}</h1>
+
+              {/* Rendering Contents */}
+              {compiler(props.body, {
+                wrapper: null,
+                overrides: {
+                  pre: CustomPre,
+                  code: CustomCode,
+                },
+              })}
+
+            </section>
+          </div>
+        </main>
+      </>
   );
 };
 

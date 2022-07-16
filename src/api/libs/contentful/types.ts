@@ -36,8 +36,8 @@ export interface IBlog extends Entry<IBlogFields> {
   };
 }
 
-export type ContentType = 'blog';
+type ContentType = 'blog';
+type LocaleCode = 'ja-JP';
+type ContentfulDefaultLocaleCode = 'ja-JP';
 
-export type LocaleCode = 'ja-JP';
-
-export type ContentfulDefaultLocaleCode = 'ja-JP';
+export type { ContentType, LocaleCode, ContentfulDefaultLocaleCode, Asset }
