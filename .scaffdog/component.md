@@ -17,7 +17,8 @@ questions:
 ```typescript
 import React from 'react';
 
-export const {{ inputs.name | pascal }} = () => {
+interface Props {}
+export const {{ inputs.name | pascal }}: React.FC<Props> = () => {
   return (<div className={'{{ inputs.name | pascal }}'}>{{ inputs.name }}</div>);
 };
 ```
@@ -35,7 +36,6 @@ type T = typeof {{ inputs.name | pascal }};
 type Story = ComponentStoryObj<T>;
 
 export default {
-  title: '{{ inputs.name | pascal }}',
   component: {{ inputs.name | pascal }},
   args: {},
 } as ComponentMeta<T>;
