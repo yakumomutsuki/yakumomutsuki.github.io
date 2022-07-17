@@ -50,20 +50,19 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context): Pr
   throw new Error(JSON.stringify(err));
 };
 
-
-const BlogImage: React.FC<{ headerImage: Asset | undefined }> = ({headerImage}): React.ReactElement | null => {
+const BlogImage: React.FC<{ headerImage: Asset | undefined }> = ({ headerImage }): React.ReactElement | null => {
   if (headerImage && headerImage.sys) {
-     const values: React.ComponentProps<'img'> = {
+    const values: React.ComponentProps<'img'> = {
       width: '100%',
       height: 200,
-      src: `https:${headerImage.fields.file.url}`
-    }
+      src: `https:${headerImage.fields.file.url}`,
+    };
 
-    return <img className={styles.BlogContents__Img} {...values} alt=''/>
+    return <img className={styles.BlogContents__Img} {...values} alt="" />;
   }
 
-  return null
-}
+  return null;
+};
 
 const Blog: React.FC<Props> = (props) => {
   useEffect(() => {
@@ -71,33 +70,32 @@ const Blog: React.FC<Props> = (props) => {
   }, []);
 
   return (
-      <>
-        <Head>
-          <title>{ `yakumomutsuki | ${props.title}` }</title>
-          <meta name="description" content={`yakumomutsuki | ${props.title}`} />
-        </Head>
+    <>
+      <Head>
+        <title>{`yakumomutsuki | ${props.title}`}</title>
+        <meta name="description" content={`yakumomutsuki | ${props.title}`} />
+      </Head>
 
-        <main className="container">
-          <BlogImage headerImage={props.headerImage}  />
+      <main className="container">
+        <BlogImage headerImage={props.headerImage} />
 
-          <div className="lead">
-            <section className={`content ${styles.BlogContents__Section}`}>
-              <PostTime type={'created'} dateTimeText={props.createdAt} />
-              <h1 className={styles.BlogContents__Heading}>{props.title}</h1>
+        <div className="lead">
+          <section className={`content ${styles.BlogContents__Section}`}>
+            <PostTime type={'created'} dateTimeText={props.createdAt} />
+            <h1 className={styles.BlogContents__Heading}>{props.title}</h1>
 
-              {/* Rendering Contents */}
-              {compiler(props.body, {
-                wrapper: null,
-                overrides: {
-                  pre: CustomPre,
-                  code: CustomCode,
-                },
-              })}
-
-            </section>
-          </div>
-        </main>
-      </>
+            {/* Rendering Contents */}
+            {compiler(props.body, {
+              wrapper: null,
+              overrides: {
+                pre: CustomPre,
+                code: CustomCode,
+              },
+            })}
+          </section>
+        </div>
+      </main>
+    </>
   );
 };
 

@@ -40,4 +40,4 @@ type ContentType = 'blog';
 type LocaleCode = 'ja-JP';
 type ContentfulDefaultLocaleCode = 'ja-JP';
 
-export type { ContentType, LocaleCode, ContentfulDefaultLocaleCode, Asset }
+export type { ContentType, LocaleCode, ContentfulDefaultLocaleCode, Asset };

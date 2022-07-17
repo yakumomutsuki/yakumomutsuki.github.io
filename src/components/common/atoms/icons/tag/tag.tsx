@@ -1,5 +1,5 @@
 import React from 'react';
-import img from "@/components/common/atoms/icons/tag/tag.svg";
+import img from '@/components/common/atoms/icons/tag/tag.svg';
 
 interface Props extends React.ComponentProps<'img'> {
   width?: number;
