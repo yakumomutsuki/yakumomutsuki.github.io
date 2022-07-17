@@ -2,9 +2,11 @@ import { ParsedUrlQuery } from 'node:querystring';
 import { compiler } from 'markdown-to-jsx';
 import { GetStaticProps, GetStaticPaths, GetStaticPathsResult, GetStaticPropsResult } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import { highlightAll } from 'prismjs';
 import React, { useEffect } from 'react';
 import { getEntry, getEntries, IBlogFields, Asset } from '@/api/libs/contentful';
+import { Header } from '@/components/common/atoms/header';
 import { CustomCode } from '@/components/features/blog/custom-code';
 import { CustomPre } from '@/components/features/blog/custom-pre';
 import { PostTime } from '@/components/features/blog/post-time';
@@ -72,9 +74,16 @@ const Blog: React.FC<Props> = (props) => {
   return (
     <>
       <Head>
-        <title>{`yakumomutsuki | ${props.title}`}</title>
+        <title>{`yakumomutsuki | blog | ${props.title}`}</title>
         <meta name="description" content={`yakumomutsuki | ${props.title}`} />
       </Head>
+
+      <Link href={'/'}>
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+        <a>
+          <Header />
+        </a>
+      </Link>
 
       <main className="container">
         <BlogImage headerImage={props.headerImage} />
