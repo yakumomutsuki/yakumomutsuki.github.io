@@ -5,6 +5,8 @@ import { IBlogFields } from '../types';
 import { DataResponse, HttpResponse } from '@/api/types';
 
 export const getEntry = (entryId: string): Promise<HttpResponse<Entry<IBlogFields>>> => {
+  console.log({env: process.env});
+
   return createClient(config)
     .getEntry<IBlogFields>(entryId)
     .then((entry) => {
