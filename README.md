@@ -39,3 +39,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ```typescript
 yarn scaffold [component]
 ```
+
+
+## Icons
+
+https://fonts.google.com/icons?selected=Material+Icons&icon.query=calendar
+
+## Images
+
+https://unsplash.com
