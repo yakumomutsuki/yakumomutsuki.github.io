@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 // import { useTranslation, LanguageSwitcher } from 'next-export-i18n';
 import Head from 'next/head';
+import Link from 'next/link'
 import styles from './index.module.css';
 // import { Counter } from '@/components/common/atoms/counter';
 
@@ -99,6 +100,17 @@ const Home: NextPage = () => {
                     {qualifications.map((qualification, index) => (
                       <li key={index}>{qualification}</li>
                     ))}
+                  </ul>
+                </div>
+                <h2 className={styles.heading}>Others</h2>
+                <div className="content">
+                  <ul>
+                    <li>
+                      <Link href="/blog">
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                        <a>Tech Blog</a>
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </section>
