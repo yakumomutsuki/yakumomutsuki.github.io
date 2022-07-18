@@ -24,10 +24,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: install
-        run: yarn install --frozen-lockfile
+        run: yarn install --production --frozen-lockfile
 
-      - name: export
-        run: yarn export
+      - name: build
+        run: yarn build
         env:
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           CONTENTFUL_ENVIRONMENT: ${{ secrets.CONTENTFUL_ENVIRONMENT }}
