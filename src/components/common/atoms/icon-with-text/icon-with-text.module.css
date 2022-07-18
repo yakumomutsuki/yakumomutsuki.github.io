@@ -1,0 +1,8 @@
+.IconWithText {
+  display: flex;
+  flex-direction: row;
+}
+
+.IconWithText__text {
+  padding-left: 0.25rem;
+}
