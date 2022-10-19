@@ -15,6 +15,11 @@ a {
   box-sizing: border-box;
 }
 
+/* ブログページ用 */
+body.blog {
+  min-width: 460px;
+}
+
 
 /* タブレット・モバイル用 */
 @media screen and (max-width: 1023px) {

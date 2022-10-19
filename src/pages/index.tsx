@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 // import { useTranslation, LanguageSwitcher } from 'next-export-i18n';
 import Head from 'next/head';
-import Link from 'next/link'
+import Link from 'next/link';
 import styles from './index.module.css';
 // import { Counter } from '@/components/common/atoms/counter';
 
@@ -47,15 +47,9 @@ const Home: NextPage = () => {
               <div className="has-text-centered">
                 <p>yakumomutsuki</p>
                 <br />
-                <p>
-                  藤沢市在住のフロントエンド/サーバーサイドのエンジニアです。
-                  <br />
-                  勤務先は汐留のWeb系企業です。
-                </p>
+                <p>藤沢市在住のフロントエンド/サーバーサイドのエンジニアです。</p>
 
                 <p>
-                  Working in IT / Web at Minato, Japan.
-                  <br />
                   Developer of frontend, backend.
                   <br />
                   Living in Fijisawa, Japan.
