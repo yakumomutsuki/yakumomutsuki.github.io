@@ -79,8 +79,6 @@ const Blog: React.FC<Props> = (props) => {
     };
   }, []);
 
-  console.log(props.body);
-
   return (
     <>
       <Head>
