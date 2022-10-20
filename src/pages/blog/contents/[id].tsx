@@ -79,6 +79,8 @@ const Blog: React.FC<Props> = (props) => {
     };
   }, []);
 
+  console.log(props.body);
+
   return (
     <>
       <Head>
@@ -103,6 +105,7 @@ const Blog: React.FC<Props> = (props) => {
 
             {/* Rendering Contents */}
             {compiler(props.body, {
+              slugify: str => str,
               wrapper: null,
               overrides: {
                 pre: CustomPre,
