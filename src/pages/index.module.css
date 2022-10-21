@@ -1,26 +1,27 @@
 .heading {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    border-bottom: 1px solid black;
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
 }
 
 li > a.touchable {
-    padding: 1rem .75rem;
+  padding: 1rem 0.75rem;
 }
 
-.icon:hover::before, .icon:hover::before {
-    animation:1s linear rotation;
-    display: inline-block;
+.icon:hover::before {
+  animation: 1s linear rotation;
+  display: inline-block;
 }
 
 @keyframes rotation {
-    0%{
-        transform:rotate(0);
-    }
-    100%{
-        transform:rotate(360deg);
-    }
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
