@@ -1,10 +1,15 @@
-.heading {
+h2.heading {
   display: block;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 1px;
   margin-bottom: 5px;
   text-transform: uppercase;
   border-bottom: 1px solid black;
+  font-weight: 400;
+}
+
+h2.heading + ul {
+  margin-top: 1rem;
 }
 
 li > a.touchable {

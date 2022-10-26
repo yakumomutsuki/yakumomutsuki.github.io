@@ -78,41 +78,35 @@ const Home: NextPage = () => {
               </ul>
             </div>
             <div className="column">
-              <section>
+              <section className="content">
                 <h2 className={styles.heading}>Skills</h2>
-                <div className="content">
-                  <ul>
-                    <li>HTML5 / CSS</li>
-                    <li>JavaScript / TypeScript</li>
-                    <li>Vue.js / React.js</li>
-                    <li>Java / Ruby / PHP</li>
-                  </ul>
-                </div>
+                <ul>
+                  <li>HTML5 / CSS</li>
+                  <li>JavaScript / TypeScript</li>
+                  <li>Vue.js / React.js</li>
+                  <li>Java / Ruby / PHP</li>
+                </ul>
               </section>
 
-              <section>
+              <section className="content">
                 <h2 className={styles.heading}>Certified</h2>
-                <div className="content">
-                  <ul>
-                    {qualifications.map((qualification, index) => (
-                      <li key={index}>{qualification}</li>
-                    ))}
-                  </ul>
-                </div>
+                <ul>
+                  {qualifications.map((qualification, index) => (
+                    <li key={index}>{qualification}</li>
+                  ))}
+                </ul>
               </section>
 
-              <section>
+              <section className="content">
                 <h2 className={styles.heading}>Others</h2>
-                <div className="content">
-                  <ul>
-                    <li>
-                      <Link href="/blog">
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <a>Tech Blog</a>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
+                <ul>
+                  <li>
+                    <Link href="/blog">
+                      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                      <a>Tech Blog</a>
+                    </Link>
+                  </li>
+                </ul>
               </section>
             </div>
           </div>
