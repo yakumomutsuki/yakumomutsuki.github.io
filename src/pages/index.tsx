@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 // import { useTranslation, LanguageSwitcher } from 'next-export-i18n';
-import Head from 'next/head';
+// import Head from 'next/head';
 import Link from 'next/link';
 import styles from './index.module.css';
 // import { Counter } from '@/components/common/atoms/counter';
