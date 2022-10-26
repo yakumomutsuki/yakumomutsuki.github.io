@@ -103,7 +103,7 @@ const Blog: React.FC<Props> = (props) => {
 
             {/* Rendering Contents */}
             {compiler(props.body, {
-              slugify: str => str,
+              slugify: (str) => str,
               wrapper: null,
               overrides: {
                 pre: CustomPre,

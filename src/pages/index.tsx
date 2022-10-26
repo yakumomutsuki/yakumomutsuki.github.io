@@ -88,6 +88,9 @@ const Home: NextPage = () => {
                     <li>Java / Ruby / PHP</li>
                   </ul>
                 </div>
+              </section>
+
+              <section>
                 <h2 className={styles.heading}>Certified</h2>
                 <div className="content">
                   <ul>
@@ -96,6 +99,9 @@ const Home: NextPage = () => {
                     ))}
                   </ul>
                 </div>
+              </section>
+
+              <section>
                 <h2 className={styles.heading}>Others</h2>
                 <div className="content">
                   <ul>
