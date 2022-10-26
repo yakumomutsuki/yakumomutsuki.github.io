@@ -69,14 +69,6 @@ const BlogImage: React.FC<{ headerImage: Asset | undefined }> = ({ headerImage }
 const Blog: React.FC<Props> = (props) => {
   useEffect(() => {
     highlightAll();
-
-    // 理由不明...なぜか横幅と実表示が異なるので、
-    // ひとまずmin-widthを指定するようにすると直る
-    document.body.classList.add('blog');
-
-    return function cleanUp() {
-      document.body.classList.remove('blog');
-    };
   }, []);
 
   return (

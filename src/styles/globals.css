@@ -23,11 +23,7 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-/* ブログページ用 */
-body.blog {
-  min-width: 460px;
+  overflow-wrap: break-word;
 }
 
 /* タブレット・モバイル用 */
