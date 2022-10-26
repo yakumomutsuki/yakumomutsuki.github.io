@@ -7,6 +7,8 @@ import styles from './index.module.css';
 
 import { Header } from '@/components/common/atoms/header';
 
+import { Seo } from '@/components/features/seo'
+
 const qualifications: string[] = [
   'Java SE 8 Programmer I (2019-01)',
   'LPIC Level 1 (2019-09)',
@@ -25,12 +27,12 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>yakumomutsuki.github.io</title>
-        <meta name="description" content="yakumomutsuki's profile" />
-        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
-      </Head>
-
+    <Seo 
+      pageTitle='yakumomutsuki.github.io'
+      pageDescription="yakumomutsuki's profile"
+      pagePath='https://yakumomutsuki.github.io'
+      pageImg='https://yakumomutsuki.github.io/profile.jpeg'
+    />
       <Header />
 
       <main className="container">
