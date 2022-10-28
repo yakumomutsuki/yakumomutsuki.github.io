@@ -30,8 +30,6 @@ const Home: NextPage = () => {
     <Seo 
       pageTitle='yakumomutsuki.github.io'
       pageDescription="yakumomutsuki's profile"
-      pagePath='https://yakumomutsuki.github.io'
-      pageImg='https://yakumomutsuki.github.io/profile.jpeg'
     />
       <Header />
 

@@ -1,10 +1,10 @@
 import { GetStaticProps, GetStaticPropsResult } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
 import { getEntries, IBlogFields } from '@/api/libs/contentful';
 import { Card } from '@/components/common/atoms/card';
 import { Header } from '@/components/common/atoms/header';
+import { Seo } from '@/components/features/seo'
 
 interface Entry extends IBlogFields {
   id: string;
@@ -38,10 +38,7 @@ const ListPage: React.FC<Props> = ({ entries }) => {
 
   return (
     <>
-      <Head>
-        <title>yakumomutsuki | blog </title>
-        <meta name="description" content="yakumomutsuki's blog" />
-      </Head>
+      <Seo pageDescription="yakumomutsuki's blog" pageTitle='yakumomutsuki | blog' pagePath='/blog' />
 
       <Link href={'/'}>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

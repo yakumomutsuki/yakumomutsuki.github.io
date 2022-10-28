@@ -4,8 +4,8 @@ import React from 'react'
 interface MetaData {
   pageTitle: string
   pageDescription: string
-  pagePath: string
-  pageImg: string
+  pagePath?: string
+  pageImg?: string
   pageImgWidth?: number
   pageImgHeight?: number
 }
@@ -14,14 +14,16 @@ export const Seo: React.FC<MetaData> = ({
   pageTitle,
   pageDescription,
   pagePath,
-  pageImg,
+  pageImg = `https://yakumomutsuki.github.io/profile.jpeg`,
   pageImgWidth,
   pageImgHeight
 }) => {
 
+  const siteUrl = 'https://yakumomutsuki.github.io'
+
   const title = pageTitle
   const description = pageDescription
-  const url = pagePath
+  const url = pagePath ? siteUrl + pagePath : siteUrl
   const imgUrl = pageImg
   const imgWidth = pageImgWidth ? pageImgWidth : 1280
   const imgHeight = pageImgHeight ? pageImgHeight : 640
@@ -40,6 +42,7 @@ export const Seo: React.FC<MetaData> = ({
       <meta property="og:image:width" content={String(imgWidth)} />
       <meta property="og:image:height" content={String(imgHeight)} />
       <meta name="twitter:card" content="summary" />
+      <meta name="twitter:description" content={description} />
       <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
       <link rel="canonical" href={url} />
     </Head>
