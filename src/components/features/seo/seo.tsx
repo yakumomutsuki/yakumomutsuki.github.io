@@ -42,6 +42,10 @@ export const Seo: React.FC<MetaData> = ({
       <meta property="og:image:height" content={String(imgHeight)} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:site" content={'@yakumomutsuki'} />
+      <meta name="twitter:url" content={url} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:image" content={imgUrl} />
       <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
       <link rel="canonical" href={url} />
     </Head>
