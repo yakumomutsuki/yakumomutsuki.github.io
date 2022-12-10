@@ -7,7 +7,7 @@ import styles from './index.module.css';
 
 import { Header } from '@/components/common/atoms/header';
 
-import { Seo } from '@/components/features/seo'
+import { Seo } from '@/components/features/seo';
 
 const qualifications: string[] = [
   'Java SE 8 Programmer I (2019-01)',
@@ -27,10 +27,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-    <Seo 
-      pageTitle='yakumomutsuki.github.io'
-      pageDescription="yakumomutsuki's profile"
-    />
+      <Seo pageTitle="yakumomutsuki.github.io" pageDescription="yakumomutsuki's profile" />
       <Header />
 
       <main className="container">
