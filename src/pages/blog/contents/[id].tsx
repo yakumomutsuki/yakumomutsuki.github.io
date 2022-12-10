@@ -1,8 +1,8 @@
 import { ParsedUrlQuery } from 'node:querystring';
 import { compiler } from 'markdown-to-jsx';
 import { GetStaticProps, GetStaticPaths, GetStaticPathsResult, GetStaticPropsResult } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { highlightAll } from 'prismjs';
 import React, { useEffect } from 'react';
 import { getEntry, getEntries, IBlogFields, Asset } from '@/api/libs/contentful';
@@ -11,6 +11,7 @@ import { CustomCode } from '@/components/features/blog/custom-code';
 import { CustomPre } from '@/components/features/blog/custom-pre';
 import { PostTime } from '@/components/features/blog/post-time';
 import 'prismjs/themes/prism-tomorrow.min.css';
+import { Seo } from '@/components/features/seo';
 import styles from '@/pages/blog/contents/[id].module.css';
 
 // Types
@@ -67,16 +68,20 @@ const BlogImage: React.FC<{ headerImage: Asset | undefined }> = ({ headerImage }
 };
 
 const Blog: React.FC<Props> = (props) => {
+  const router = useRouter();
+  const { id } = router.query;
+
   useEffect(() => {
     highlightAll();
   }, []);
 
   return (
     <>
-      <Head>
-        <title>{`yakumomutsuki | blog | ${props.title}`}</title>
-        <meta name="description" content={`yakumomutsuki | ${props.title}`} />
-      </Head>
+      <Seo
+        pageDescription={props.title}
+        pageTitle={`yakumomutsuki | blog | ${props.title}`}
+        pagePath={`/blog/contents/${id}`}
+      />
 
       <Link href={'/'}>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

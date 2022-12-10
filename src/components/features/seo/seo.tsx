@@ -1,13 +1,13 @@
-import Head from 'next/head'
-import React from 'react'
+import Head from 'next/head';
+import React from 'react';
 
 interface MetaData {
-  pageTitle: string
-  pageDescription: string
-  pagePath?: string
-  pageImg?: string
-  pageImgWidth?: number
-  pageImgHeight?: number
+  pageTitle: string;
+  pageDescription: string;
+  pagePath?: string;
+  pageImg?: string;
+  pageImgWidth?: number;
+  pageImgHeight?: number;
 }
 
 export const Seo: React.FC<MetaData> = ({
@@ -16,17 +16,16 @@ export const Seo: React.FC<MetaData> = ({
   pagePath,
   pageImg = `https://yakumomutsuki.github.io/profile.jpeg`,
   pageImgWidth,
-  pageImgHeight
+  pageImgHeight,
 }) => {
+  const siteUrl = 'https://yakumomutsuki.github.io';
 
-  const siteUrl = 'https://yakumomutsuki.github.io'
-
-  const title = pageTitle
-  const description = pageDescription
-  const url = pagePath ? siteUrl + pagePath : siteUrl
-  const imgUrl = pageImg
-  const imgWidth = pageImgWidth ? pageImgWidth : 1280
-  const imgHeight = pageImgHeight ? pageImgHeight : 640
+  const title = pageTitle;
+  const description = pageDescription;
+  const url = pagePath ? siteUrl + pagePath : siteUrl;
+  const imgUrl = pageImg;
+  const imgWidth = pageImgWidth ? pageImgWidth : 1280;
+  const imgHeight = pageImgHeight ? pageImgHeight : 640;
 
   return (
     <Head>
@@ -46,5 +45,5 @@ export const Seo: React.FC<MetaData> = ({
       <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
       <link rel="canonical" href={url} />
     </Head>
-  )
-}
+  );
+};
