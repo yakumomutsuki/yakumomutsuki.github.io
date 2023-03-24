@@ -1,9 +1,11 @@
 name: github pages
 
 on:
+  # develop ブランチにマージされたタイミング or 手動のワークフロー実行時
   push:
     branches:
       - develop
+  workflow_dispatch:
 
 jobs:
   build-deploy:
