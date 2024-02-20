@@ -19,6 +19,7 @@ const qualifications: string[] = [
   'LPIC Level 2 (2021-09)',
   'AWS Certified Cloud Practitioner (2021-12)',
   'AWS Certified Solutions Architect – Associate (2022-01)',
+  'Google Cloud Associate Cloud Engineer (2024-02)',
 ];
 
 const Home: NextPage = () => {
